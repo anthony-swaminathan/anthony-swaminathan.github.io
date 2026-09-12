@@ -6,7 +6,7 @@ permalink: /teaching/econ210-summer-2024
 venue: "Duke University"
 date: 2024-06-01
 terms: "Summer 2024"
-syllabus: "https://drive.google.com/file/d/104x70pGuEljjTLfIRFvVbveOuw0gcQQM/view?usp=sharing"
+syllabus: "https://www.dropbox.com/scl/fi/ibx8n9sx9pdku8z0ywy1g/Econ210_Syllabus_Summer2024.pdf?rlkey=bxrj9cwqbreeozu7k7cmisms2&raw=1"
 evaluation: "Mean Instructor Evaluation: 4.67/5"
 ---
 
