@@ -1,0 +1,29 @@
+---
+layout: archive
+title: "Teaching"
+permalink: /teaching/
+author_profile: true
+---
+
+{% include list-styles.html %}
+
+{% assign sections = "instructor|As Instructor,ta|As Teaching Assistant" | split: "," %}
+{% for section in sections %}
+  {% assign parts = section | split: "|" %}
+  <h2>{{ parts[1] }}</h2>
+  {% for post in site.teaching reversed %}
+    {% if post.type != parts[0] %}{% continue %}{% endif %}
+    <div class="entry">
+      <p class="entry__title"><strong>{{ post.title }}</strong></p>
+      <p class="entry__meta">
+        {{ post.terms }}{% if post.syllabus %} (<a href="{{ post.syllabus }}">Syllabus</a>){% endif %}<br />
+        {{ post.venue }}
+        {% if post.evaluation %}<br />{{ post.evaluation }}{% endif %}
+      </p>
+      {% assign description = post.content | strip_html | strip %}
+      {% if description != "" %}
+        <details><summary>Course description</summary>{{ post.content }}</details>
+      {% endif %}
+    </div>
+  {% endfor %}
+{% endfor %}
