@@ -15,7 +15,8 @@ Built with the [Academic Pages](https://github.com/academicpages/academicpages.g
 | Top menu | `_data/navigation.yml` |
 | Papers | one file per paper in `_publications/` |
 | Courses | one file per course in `_teaching/` |
-| CV, paper, and syllabus PDFs | Dropbox folder `CV Documents/Links` (linked with `raw=1` Dropbox share links) |
+| CV PDF | Dropbox `CV Documents/Swaminathan CV.pdf` (linked with a `raw=1` Dropbox share link) |
+| Paper and syllabus PDFs | Dropbox folder `CV Documents/Public Files` (linked with `raw=1` Dropbox share links) |
 | Headshot | `images/profile.png` |
 | Styling | "SITE CUSTOMIZATIONS" section at the end of `assets/css/main.scss` |
 
@@ -48,4 +49,4 @@ Create a file in `_teaching/` with `type: "instructor"` or `type: "ta"`, plus `t
 
 ### Updating the CV or a paper
 
-Save the new PDF over the old one in `CV Documents/Links` with the same file name. The Dropbox link, and so the website, picks up the new version automatically.
+Save the new PDF over the old one (in `CV Documents` for the CV, `CV Documents/Public Files` for papers) with the same file name. Moving or renaming a file within Dropbox also keeps its link working. The Dropbox link, and so the website, picks up the new version automatically.
