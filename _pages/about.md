@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-I am a PhD candidate in Economics at Duke University. My primary research interest is macroeconomics, with secondary interests in labor and spatial economics.
+I am a PhD candidate in Economics at Duke University. My primary research interest is macroeconomics, with secondary interests in labor, spatial, and behavioral economics.
 
 **I will be on the 2026-2027 job market.**
 
