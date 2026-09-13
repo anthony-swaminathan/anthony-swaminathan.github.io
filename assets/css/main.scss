@@ -152,9 +152,14 @@ details[open] > summary.row__line::after {
   transform: translateY(-25%) rotate(-135deg);
 }
 
+/* abstract / course description, indented under its row */
 .row__body {
-  padding: 0 3em 1em 0.5em;
+  padding: 0 3em 1.1em 2em;
   text-align: justify;
+}
+
+.row__label {
+  font-style: italic;
 }
 
 /* Job market paper abstract on the home page */

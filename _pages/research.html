@@ -23,7 +23,7 @@ Text below the front matter becomes a collapsible abstract.
     {% if abstract != "" %}
       <details class="row">
         <summary class="row__line">{{ line }}</summary>
-        <div class="row__body"><span class="row__label">Abstract:</span> {{ abstract }}</div>
+        <div class="row__body"><em class="row__label">Abstract:</em> {{ abstract }}</div>
       </details>
     {% else %}
       <div class="row"><div class="row__line">{{ line }}</div></div>

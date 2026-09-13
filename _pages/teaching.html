@@ -23,7 +23,7 @@ Text below the front matter becomes a collapsible course description.
     {% if description != "" %}
       <details class="row">
         <summary class="row__line">{{ line }}</summary>
-        <div class="row__body">{{ description }}</div>
+        <div class="row__body"><em class="row__label">Course Description:</em> {{ description }}</div>
       </details>
     {% else %}
       <div class="row"><div class="row__line">{{ line }}</div></div>
