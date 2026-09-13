@@ -25,4 +25,14 @@ You can find my CV [here](https://www.dropbox.com/scl/fi/3v1nz1jwbslmuv4kut9s4/S
 
 Contact information
 ------
-[anthony.swaminathan@duke.edu](mailto:anthony.swaminathan@duke.edu)
+<p>
+Department of Economics<br>
+Duke University<br>
+213 Social Sciences, Room 230<br>
+Durham, NC 27708
+</p>
+
+<p>
+Phone: (530) 601-8485<br>
+Email: <a href="mailto:anthony.swaminathan@duke.edu">anthony.swaminathan@duke.edu</a>
+</p>
