@@ -15,8 +15,9 @@ Built with the [Academic Pages](https://github.com/academicpages/academicpages.g
 | Top menu | `_data/navigation.yml` |
 | Papers | one file per paper in `_publications/` |
 | Courses | one file per course in `_teaching/` |
-| CV and paper PDFs | `files/` (served at `https://anthony-swaminathan.github.io/files/NAME.pdf`) |
+| CV, paper, and syllabus PDFs | Dropbox folder `CV Documents/Links` (linked with `raw=1` Dropbox share links) |
 | Headshot | `images/profile.png` |
+| Styling | "SITE CUSTOMIZATIONS" section at the end of `assets/css/main.scss` |
 
 ### Adding a paper
 
@@ -31,19 +32,20 @@ permalink: /publication/new-paper
 date: 2026-10-01             # newer dates appear first within a section
 coauthors: 'with <a href="https://example.com">Coauthor Name</a>'   # optional
 venue: 'Journal Name'        # optional, for published papers
-note: 'Job Market Paper'     # optional, shown in italics after the title
-paperurl: '/files/new-paper.pdf'   # optional, makes the title a link
+note: 'Job Market Paper'     # optional, shown in parentheses after the title
+draft: 'https://www.dropbox.com/...&raw=1'       # optional, adds a [Draft] link
+published: 'https://doi.org/...'                 # optional, adds a [Published Paper] link
 ---
 
-Abstract goes here (optional; shown as a click-to-expand "Abstract").
+Abstract goes here (optional; shown as a collapsible "Abstract").
 ```
 
-Section headings for each `category` are set under `publication_category` in `_config.yml`.
+Section headings for each `category` are set under `publication_category` in `_config.yml`. The paper with `note: 'Job Market Paper'` is also featured on the home page, using its `draft` link and abstract.
 
 ### Adding a course
 
-Create a file in `_teaching/` with `type: "instructor"` or `type: "ta"`, plus `title`, `venue`, `date`, `terms`, and optionally `syllabus` and `evaluation`. The text below the front matter becomes the click-to-expand course description.
+Create a file in `_teaching/` with `type: "instructor"` or `type: "ta"`, plus `title`, `venue`, `date`, `terms`, and optionally `syllabus` (URL, shown as a [Syllabus] link) and `evaluation`. The text below the front matter becomes the collapsible course description.
 
-### Updating the CV
+### Updating the CV or a paper
 
-Replace `files/Swaminathan_CV.pdf` with a new file of the same name, then commit and push.
+Save the new PDF over the old one in `CV Documents/Links` with the same file name. The Dropbox link, and so the website, picks up the new version automatically.

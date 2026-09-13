@@ -5,7 +5,7 @@ category: published
 permalink: /publication/zlb-volatility
 date: 2021-07-01
 venue: 'Economics Letters'
-paperurl: 'https://www.sciencedirect.com/science/article/abs/pii/S0165176521001543'
+published: 'https://www.sciencedirect.com/science/article/abs/pii/S0165176521001543'
 citation: 'Swaminathan, Anthony. (2021). &quot;Macroeconomic volatility at the zero lower bound: Evidence from the OECD.&quot; <i>Economics Letters</i>.'
 ---
 

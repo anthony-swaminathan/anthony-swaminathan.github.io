@@ -13,12 +13,10 @@ I am a PhD candidate in Economics at Duke University. My primary research intere
 
 {% assign jmp = site.publications | where: "note", "Job Market Paper" | first %}
 {% if jmp %}
-<div class="entry entry--featured">
-<p class="entry__label">Job Market Paper</p>
-<p class="entry__title">{% if jmp.paperurl %}<a href="{{ jmp.paperurl }}">{{ jmp.title }}</a>{% else %}{{ jmp.title }}{% endif %}</p>
+My job market paper is "{{ jmp.title }}."{% if jmp.draft %} <a href="{{ jmp.draft }}">[Draft]</a>{% endif %}
+
 {% assign abstract = jmp.content | strip_html | strip %}
-{% if abstract != "" %}<details><summary>Abstract</summary>{{ jmp.content }}</details>{% endif %}
-</div>
+{% if abstract != "" %}<details class="home__abstract"><summary>Abstract</summary>{{ jmp.content }}</details>{% endif %}
 {% endif %}
 
 You can find my CV [here](https://www.dropbox.com/scl/fi/3v1nz1jwbslmuv4kut9s4/Swaminathan-CV.pdf?rlkey=rfjxnybbsqrfuiktf96y7llsf&raw=1).

@@ -6,23 +6,27 @@ author_profile: true
 hide_title: true
 ---
 
+{% comment %}
+Each course is one row. Front matter: title, type (instructor | ta), terms,
+venue, and optionally syllabus (URL) and evaluation.
+Text below the front matter becomes a collapsible course description.
+{% endcomment %}
+
 {% assign sections = "instructor|As Instructor,ta|As Teaching Assistant" | split: "," %}
 {% for section in sections %}
   {% assign parts = section | split: "|" %}
-  <h2>{{ parts[1] }}</h2>
+  <h2 class="list__heading">{{ parts[1] }}</h2>
   {% for post in site.teaching reversed %}
     {% if post.type != parts[0] %}{% continue %}{% endif %}
-    <div class="entry">
-      <p class="entry__title">{{ post.title }}</p>
-      <p class="entry__meta">
-        {{ post.terms }}{% if post.syllabus %} (<a href="{{ post.syllabus }}">Syllabus</a>){% endif %}<br />
-        {{ post.venue }}
-        {% if post.evaluation %}<br />{{ post.evaluation }}{% endif %}
-      </p>
-      {% assign description = post.content | strip_html | strip %}
-      {% if description != "" %}
-        <details><summary>Course description</summary>{{ post.content }}</details>
-      {% endif %}
-    </div>
+    {% capture line %}{{ post.title }}<br>{{ post.terms }}{% if post.syllabus %} <a href="{{ post.syllabus }}">[Syllabus]</a>{% endif %}<br>{{ post.venue }}{% if post.evaluation %}<br>{{ post.evaluation }}{% endif %}{% endcapture %}
+    {% assign description = post.content | strip_html | strip %}
+    {% if description != "" %}
+      <details class="row">
+        <summary class="row__line">{{ line }}</summary>
+        <div class="row__body">{{ description }}</div>
+      </details>
+    {% else %}
+      <div class="row"><div class="row__line">{{ line }}</div></div>
+    {% endif %}
   {% endfor %}
 {% endfor %}

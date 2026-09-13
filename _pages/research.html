@@ -8,21 +8,25 @@ redirect_from:
   - /publications/
 ---
 
+{% comment %}
+Each paper is one row. Optional front matter fields:
+  venue, coauthors, note, draft (URL), published (URL).
+Text below the front matter becomes a collapsible abstract.
+{% endcomment %}
+
 {% for category in site.publication_category %}
-  <h2>{{ category[1].title }}</h2>
+  <h2 class="list__heading">{{ category[1].title }}</h2>
   {% for post in site.publications reversed %}
     {% if post.category != category[0] %}{% continue %}{% endif %}
-    <div class="entry">
-      <p class="entry__title">
-        {% if post.paperurl %}<a href="{{ post.paperurl }}">{{ post.title }}</a>{% else %}{{ post.title }}{% endif %}
-        {% if post.note %}<span class="entry__note">({{ post.note }})</span>{% endif %}
-      </p>
-      {% if post.coauthors %}<p class="entry__meta">{{ post.coauthors }}</p>{% endif %}
-      {% if post.venue %}<p class="entry__meta"><i>{{ post.venue }}</i>, {{ post.date | date: "%B %Y" }}</p>{% endif %}
-      {% assign abstract = post.content | strip_html | strip %}
-      {% if abstract != "" %}
-        <details><summary>Abstract</summary>{{ post.content }}</details>
-      {% endif %}
-    </div>
+    {% capture line %}{{ post.title }}{% if post.venue %}. <i>{{ post.venue }}</i>, {{ post.date | date: "%B %Y" }}.{% endif %}{% if post.coauthors %} ({{ post.coauthors }}){% endif %}{% if post.note %} ({{ post.note }}){% endif %}{% if post.draft %} <a href="{{ post.draft }}">[Draft]</a>{% endif %}{% if post.published %} <a href="{{ post.published }}">[Published Paper]</a>{% endif %}{% endcapture %}
+    {% assign abstract = post.content | strip_html | strip %}
+    {% if abstract != "" %}
+      <details class="row">
+        <summary class="row__line">{{ line }}</summary>
+        <div class="row__body"><span class="row__label">Abstract:</span> {{ abstract }}</div>
+      </details>
+    {% else %}
+      <div class="row"><div class="row__line">{{ line }}</div></div>
+    {% endif %}
   {% endfor %}
 {% endfor %}
