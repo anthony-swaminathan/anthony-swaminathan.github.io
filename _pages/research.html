@@ -3,11 +3,10 @@ layout: archive
 title: "Research"
 permalink: /research/
 author_profile: true
+hide_title: true
 redirect_from:
   - /publications/
 ---
-
-{% include list-styles.html %}
 
 {% for category in site.publication_category %}
   <h2>{{ category[1].title }}</h2>
@@ -15,7 +14,7 @@ redirect_from:
     {% if post.category != category[0] %}{% continue %}{% endif %}
     <div class="entry">
       <p class="entry__title">
-        <strong>{% if post.paperurl %}<a href="{{ post.paperurl }}">{{ post.title }}</a>{% else %}{{ post.title }}{% endif %}</strong>
+        {% if post.paperurl %}<a href="{{ post.paperurl }}">{{ post.title }}</a>{% else %}{{ post.title }}{% endif %}
         {% if post.note %}<span class="entry__note">({{ post.note }})</span>{% endif %}
       </p>
       {% if post.coauthors %}<p class="entry__meta">{{ post.coauthors }}</p>{% endif %}

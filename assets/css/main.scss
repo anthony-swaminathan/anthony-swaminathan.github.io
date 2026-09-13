@@ -37,3 +37,106 @@
     "layout/sidebar",
     "layout/json_cv"
 ;
+
+/* ==========================================================================
+   SITE CUSTOMIZATIONS
+   ========================================================================== */
+
+/* Slightly larger text on wide screens */
+html {
+  @include breakpoint($x-large) {
+    font-size: 19px;
+  }
+}
+
+/* Use the full content width (the template leaves an empty right column) */
+.page {
+  @include breakpoint($large) {
+    padding-right: 0;
+  }
+}
+
+/* Larger sidebar text */
+.sidebar {
+  .author__name {
+    font-size: $type-size-4;
+  }
+
+  .author__bio,
+  li {
+    font-size: 0.85em;
+  }
+}
+
+/* Footer sits after the content instead of pinned over it */
+body {
+  padding-bottom: 0;
+}
+
+.page__footer {
+  position: relative;
+  bottom: auto;
+}
+
+/* Section headings on list pages */
+.archive h2 {
+  margin: 1.8em 0 0.2em;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+/* Paper and course entries, separated by lines */
+.entry {
+  padding: 0.9em 0;
+  border-bottom: 1px solid var(--global-border-color);
+
+  p {
+    margin: 0 0 0.25em;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  details {
+    font-size: 0.9em;
+    margin-top: 0.3em;
+
+    summary {
+      cursor: pointer;
+      color: #52adc8;
+    }
+
+    p {
+      margin: 0.4em 0 0;
+      text-align: justify;
+    }
+  }
+}
+
+.entry__note {
+  font-style: italic;
+}
+
+.entry__meta {
+  font-size: 0.9em;
+  color: var(--global-text-color-light);
+}
+
+/* Featured job market paper on the home page */
+.entry--featured {
+  margin: 0 0 1.3em;
+  padding: 0.9em 1.2em;
+  border: 1px solid var(--global-border-color);
+  border-radius: 4px;
+}
+
+.entry__label {
+  font-size: 0.75em;
+  font-weight: bold;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--global-text-color-light);
+}

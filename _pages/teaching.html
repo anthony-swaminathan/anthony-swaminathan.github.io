@@ -3,9 +3,8 @@ layout: archive
 title: "Teaching"
 permalink: /teaching/
 author_profile: true
+hide_title: true
 ---
-
-{% include list-styles.html %}
 
 {% assign sections = "instructor|As Instructor,ta|As Teaching Assistant" | split: "," %}
 {% for section in sections %}
@@ -14,7 +13,7 @@ author_profile: true
   {% for post in site.teaching reversed %}
     {% if post.type != parts[0] %}{% continue %}{% endif %}
     <div class="entry">
-      <p class="entry__title"><strong>{{ post.title }}</strong></p>
+      <p class="entry__title">{{ post.title }}</p>
       <p class="entry__meta">
         {{ post.terms }}{% if post.syllabus %} (<a href="{{ post.syllabus }}">Syllabus</a>){% endif %}<br />
         {{ post.venue }}
