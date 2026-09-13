@@ -90,7 +90,7 @@ body {
 /* Paper and course entries, separated by lines */
 .entry {
   padding: 0.9em 0;
-  border-bottom: 1px solid var(--global-border-color);
+  border-bottom: 1px solid var(--global-dark-border-color);
 
   p {
     margin: 0 0 0.25em;
@@ -122,14 +122,15 @@ body {
 
 .entry__meta {
   font-size: 0.9em;
-  color: var(--global-text-color-light);
+  color: var(--global-text-color);
+  opacity: 0.8;
 }
 
 /* Featured job market paper on the home page */
 .entry--featured {
   margin: 0 0 1.3em;
   padding: 0.9em 1.2em;
-  border: 1px solid var(--global-border-color);
+  border: 1px solid var(--global-dark-border-color);
   border-radius: 4px;
 }
 
@@ -138,5 +139,6 @@ body {
   font-weight: bold;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--global-text-color-light);
+  color: var(--global-text-color);
+  opacity: 0.75;
 }
