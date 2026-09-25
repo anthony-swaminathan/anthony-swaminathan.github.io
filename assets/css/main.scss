@@ -87,16 +87,12 @@ body {
   }
 }
 
-/* Research and Teaching lists, styled after the old Google Site */
-.archive {
-  font-family: "Source Sans 3", "Source Sans Pro", $sans-serif;
-}
-
-.list__heading {
+/* Section headings: research, teaching, and ordinary pages alike */
+.list__heading,
+.page__content h2 {
   margin: 1.6em 0 0.8em;
   padding: 0;
   border: none;
-  font-family: "Source Sans 3", "Source Sans Pro", $sans-serif;
   font-size: 1.45em;
   font-weight: 400;
   color: #012169;
@@ -162,16 +158,7 @@ details[open] > summary.row__line::after {
   font-style: italic;
 }
 
-/* Job market paper abstract on the home page */
+/* Job market paper abstract on the home page: styled as a research-list row */
 .home__abstract {
-  margin: -0.8em 0 1.3em;
-  font-size: 0.9em;
-
-  summary {
-    cursor: pointer;
-  }
-
-  p {
-    margin: 0.4em 0 0;
-  }
+  margin: 0.2em 0 1.6em;
 }

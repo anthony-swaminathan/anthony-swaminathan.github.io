@@ -16,7 +16,10 @@ I am a PhD candidate in Economics at Duke University. My primary research intere
 My job market paper is "{{ jmp.title }}."{% if jmp.draft %} You can find a link to the paper <a href="{{ jmp.draft }}">here</a>.{% endif %}
 
 {% assign abstract = jmp.content | strip_html | strip %}
-{% if abstract != "" %}<details class="home__abstract"><summary>Abstract</summary>{{ jmp.content }}</details>{% endif %}
+{% if abstract != "" %}<details class="row home__abstract">
+  <summary class="row__line">Abstract</summary>
+  <div class="row__body">{{ abstract }}</div>
+</details>{% endif %}
 {% endif %}
 
 You can also access my CV [here](https://www.dropbox.com/scl/fi/3v1nz1jwbslmuv4kut9s4/Swaminathan-CV.pdf?rlkey=rfjxnybbsqrfuiktf96y7llsf&raw=1).
