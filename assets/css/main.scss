@@ -158,7 +158,13 @@ details[open] > summary.row__line::after {
   font-style: italic;
 }
 
-/* Job market paper abstract on the home page: styled as a research-list row */
+/* Job market paper abstract on the home page: research-list row, but with
+   the browser's own disclosure triangle rather than the list chevron */
 .home__abstract {
   margin: 0.2em 0 1.6em;
+
+  summary {
+    cursor: pointer;
+    padding: 1.1em 3em 1.1em 1.5em;
+  }
 }
