@@ -18,7 +18,7 @@ My job market paper is "{{ jmp.title }}."{% if jmp.draft %} You can find a link 
 {% assign abstract = jmp.content | strip_html | strip %}
 {% if abstract != "" %}<details class="row home__abstract">
   <summary>Abstract</summary>
-  <div class="row__body">{{ abstract }}</div>
+  <span class="row__body">{{ abstract }}</span>
 </details>{% endif %}
 {% endif %}
 

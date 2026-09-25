@@ -158,13 +158,52 @@ details[open] > summary.row__line::after {
   font-style: italic;
 }
 
-/* Job market paper abstract on the home page: research-list row, but with
-   the browser's own disclosure triangle rather than the list chevron */
+/* Job market paper abstract on the home page: an inline disclosure.
+   Reads "Abstract >" and opens to the right on the same line, with no
+   rule underneath. Indented to sit where the research abstracts sit. */
 .home__abstract {
   margin: 0.2em 0 1.6em;
+  padding-left: 2em;
+  border-bottom: none;
 
   summary {
+    display: inline;
     cursor: pointer;
-    padding: 1.1em 3em 1.1em 1.5em;
+    list-style: none;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    /* triangle sits after the word and points right */
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 0.45em;
+      height: 0.45em;
+      margin-left: 0.5em;
+      vertical-align: 0.12em;
+      border-right: 2px solid currentColor;
+      border-bottom: 2px solid currentColor;
+      opacity: 0.6;
+      transform: rotate(-45deg);
+      transition: transform 0.2s ease;
+    }
+  }
+
+  &[open] > summary::after {
+    transform: rotate(45deg);
+  }
+
+  /* Chromium wraps a details' non-summary children in an internal block box,
+     which would push the abstract onto its own line. Unwrapping it only while
+     open keeps the UA's content-visibility: hidden working while closed.
+     Browsers without ::details-content simply break the line instead. */
+  &[open]::details-content {
+    display: inline;
+  }
+
+  .row__body {
+    padding: 0;
   }
 }
