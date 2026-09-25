@@ -41,7 +41,7 @@ published: 'https://doi.org/...'                 # optional, adds a [Published P
 Abstract goes here (optional; shown as a collapsible "Abstract").
 ```
 
-Section headings for each `category` are set under `publication_category` in `_config.yml`. The paper with `note: 'Job Market Paper'` is also featured on the home page, using its `draft` link and abstract.
+Section headings for each `category` are set under `publication_category` in `_config.yml`. The paper with `category: jmp` is also featured on the home page, using its `draft` link and abstract.
 
 ### Adding a course
 

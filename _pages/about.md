@@ -11,7 +11,7 @@ I am a PhD candidate in Economics at Duke University. My primary research intere
 
 **I will be on the 2026-2027 job market.**
 
-{% assign jmp = site.publications | where: "note", "Job Market Paper" | first %}
+{% assign jmp = site.publications | where: "category", "jmp" | first %}
 {% if jmp %}
 My job market paper is "{{ jmp.title }}."{% if jmp.draft %} You can find a link to the paper <a href="{{ jmp.draft }}">here</a>.{% endif %}
 
