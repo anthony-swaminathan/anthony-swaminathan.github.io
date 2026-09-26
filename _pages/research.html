@@ -18,7 +18,7 @@ Text below the front matter becomes a collapsible abstract.
   <h2 class="list__heading">{{ category[1].title }}</h2>
   {% for post in site.publications reversed %}
     {% if post.category != category[0] %}{% continue %}{% endif %}
-    {% capture line %}{{ post.title }}{% if post.venue %}. <i>{{ post.venue }}</i>, {{ post.date | date: "%B %Y" }}.{% endif %}{% if post.coauthors %} ({{ post.coauthors }}){% endif %}{% if post.note %} ({{ post.note }}){% endif %}{% if post.draft %} <a href="{{ post.draft }}">[Draft]</a>{% endif %}{% if post.published %} <a href="{{ post.published }}">[Published Paper]</a>{% endif %}{% endcapture %}
+    {% capture line %}{{ post.title }}{% if post.venue %}. <i>{{ post.venue }}</i>, {{ post.date | date: "%B %Y" }}.{% endif %}{% if post.coauthors %} ({{ post.coauthors }}){% endif %}{% if post.note %} ({{ post.note }}){% endif %}{% if post.draft %} <a href="{{ post.draft }}">[{{ post.draft_label | default: "Draft" }}]</a>{% endif %}{% if post.published %} <a href="{{ post.published }}">[Published Paper]</a>{% endif %}{% endcapture %}
     {% assign abstract = post.content | strip_html | strip %}
     {% if abstract != "" %}
       <details class="row">

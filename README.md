@@ -28,13 +28,14 @@ Create a file in `_publications/`, for example `2026-10-01-new-paper.md`:
 ---
 title: "Paper Title"
 collection: publications
-category: working            # published | working | progress
+category: working            # jmp | published | working | progress
 permalink: /publication/new-paper
 date: 2026-10-01             # newer dates appear first within a section
 coauthors: 'with <a href="https://example.com">Coauthor Name</a>'   # optional
 venue: 'Journal Name'        # optional, for published papers
 note: 'Job Market Paper'     # optional, shown in parentheses after the title
 draft: 'https://www.dropbox.com/...&raw=1'       # optional, adds a [Draft] link
+draft_label: 'JMP'                                # optional, relabels the draft link, e.g. [JMP]
 published: 'https://doi.org/...'                 # optional, adds a [Published Paper] link
 ---
 
