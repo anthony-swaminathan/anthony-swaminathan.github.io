@@ -2,7 +2,7 @@
 title: "Machine Learning for High-Frequency Imputation"
 collection: publications
 category: progress
-permalink: /publication/night-lights-local-gdp
+permalink: /publication/ml-high-frequency-imputation
 date: 2026-03-01
 coauthors: 'with Zhaosheng Li'
 ---
